@@ -1,30 +1,25 @@
 'use client'
-import Image from "next/image";
+
 import { useEffect, useRef, useState } from "react";
 
 const APISTORIES = "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty"
 
-interface Story {
-  [propName: string]: any; // bad typing
-}
+import FancyTestimonialsSlider from "./Testimonial";
+
 // make function to convert from unix to actual time
 
 export default function Home() {
 
+  const logos = ["https://static.vecteezy.com/system/resources/previews/028/667/072/non_2x/google-logo-icon-symbol-free-png.png",
+                "https://static.vecteezy.com/system/resources/previews/028/667/072/non_2x/google-logo-icon-symbol-free-png.png",
+                "https://static.vecteezy.com/system/resources/previews/028/667/072/non_2x/google-logo-icon-symbol-free-png.png",
+                "https://static.vecteezy.com/system/resources/previews/028/667/072/non_2x/google-logo-icon-symbol-free-png.png",
+                "https://static.vecteezy.com/system/resources/previews/028/667/072/non_2x/google-logo-icon-symbol-free-png.png",
+               ]
 
-  // const [stories, setStory] = useState<Story[]>([]);
-  // const [titles, setTitle] = useState<string[]>([]);
-  // const [titlesFiltered, setTitleF] = useState<string[]>([]);
-  const logosRef = useRef(null);
   useEffect(() => {
-    if (logosRef.current) {
-      let ul = logosRef.current;
-      ul.insertAdjacentHTML("afterend", ul.outerHTML);
-      ul.nextSibling.setAttribute("aria-hidden", "true");
-    }
+
   }, [])
-
-
 
 
   return (
@@ -32,8 +27,7 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2  pb-20">
         
         
-
-  <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 ">
+  <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 backdrop-blur-2xl">
     <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 backdrop-blur-md">
     <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="https://images.squarespace-cdn.com/content/v1/5d6ed158d1024700012397dc/1659988418946-9ZFW0CB5M8Y58QDEH3VP/image-asset.png?format=1000w" className="h-8" alt="Yoodli Logo" />
@@ -41,7 +35,6 @@ export default function Home() {
   
     <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse gap-5">
         <button type="button" className="text-slate-900">Sign In</button>
-        {/* <button type="button" className="relative text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get Yoodli</button> */}
         <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Get Yoodli</button>
         <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
           <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
@@ -56,10 +49,12 @@ export default function Home() {
         <button data-collapse-toggle="navbar-sticky" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
           <span className="sr-only">Open main menu</span>
           <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
           </svg>
       </button>
     </div>
+
+    {/* Page header stuff */}
     <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
       <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
@@ -85,12 +80,13 @@ export default function Home() {
     </div>
   </nav>
 
- 
-  <section className="relative bg-gradient-to-r from-blue-100 to-white py-60 text-center">
-      <div className="max-w-5xl mx-auto text-center">
+  {/* Hero section  */}
+  <section className="relative bg-gradient-to-r from-blue-100 to-white py-60 text-center item-center">
+    <div className="flex flex-row gap-20 items-center justify-center px-40">
+    <div className="max-w-5xl mx-auto text-center justify-center">
         <h1 className="text-4xl font-bold text-gray-900">
           AI Roleplays for 
-          {/* <span className="text-blue-500">job interviews</span> */}
+
           <span className="text-blue-500 inline-flex flex-col h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
           <ul className="block animate-text-slide-5 text-left leading-tight [&_li]:block ml-2">
                 <li> Job Interviews</li>
@@ -106,10 +102,18 @@ export default function Home() {
         
         <p className="mt-4 text-lg text-gray-600">
           Improve your communication skills with private, real-time, and
-          judgment-free roleplay coaching — powered by AI. Like Grammarly, but
+          judgment-free roflex space-x-16 animate-loop-scroll gap-4leplay coaching — powered by AI. Like Grammarly, but
           for speech!
         </p>
-        <div className="mt-16 flex justify-center gap-4">
+      </div>
+
+      <div className="" key = "">
+        <video width="40%" height="auto"
+          autoPlay src="https://yoodli.ai/assets/videos/hero-video.webm" playsInline loop></video>
+        </div>
+    </div>
+
+    <div className="mt-16 flex justify-center gap-4">
           <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md">
             Start roleplaying
           </button>
@@ -117,7 +121,7 @@ export default function Home() {
             Get Yoodli for your team
           </ button>
         </div>
-      </div>
+     
       {/* Chat UI */}
       {/* <div className=" right-10 top-16 bg-white shadow-lg p-4 rounded-lg max-w-xs">
         <div className="text-sm font-semibold text-gray-700">Agnes Beans</div>
@@ -134,39 +138,35 @@ export default function Home() {
         </div>
         <p className="text-gray-600">I'd love to tell you about how Yoodli can 10x your sales teams</p>
       </div> */}
-    </section>
+  </section>
 
+  
+
+    {/* company logo infinite scroll */}
+      <div className="flex flex-col items-center mx-10  mt-5 mb-20 gap-5">
+        <h1 className="text-lg font-medium text-gray-900 dark:text-white ">Trusted by the world's best companies...</h1>
+
+        <div className="flex overflow-hidden space-x-4">
+        <div className="flex space-x-16 animate-loop-scroll gap-4">
+          {logos.map((logo, index) => (
+              <img loading="lazy" src={logo} width = "10%" className="max-w-none" alt="Image 1" key = {index} />
+          ))}
+        </div>
+        <div className="flex space-x-16 animate-loop-scroll" aria-hidden="true">
+          {logos.map((logo, index) => (
+              <img loading="lazy" src={logo} width = "10%" className="max-w-none" alt="Image 1"  key = {index} />
+          ))}
+        </div>
+        </div>
+      </div>
     
+      {/* testimonials  */}
+      <div className="flex flex-col py-30 items-center mx-20 gap-5">
+        <h1  className="text-lg font-medium text-gray-900 dark:text-white "> and their employees</h1>
+          <FancyTestimonialsSlider />
+      </div>
 
-<div class="flex overflow-hidden space-x-16">
-  <div class="flex space-x-16 animate-loop-scroll gap-20">
-    <img loading="lazy" src="https://pngimg.com/d/google_PNG19644.png" width = "10%" class="max-w-none" alt="Image 1" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/80480f8a-69ad-4c30-88ba-f4e7ee08fc51?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 2" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/140d376c-13f2-4823-b397-b3de733bf560?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 3" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0ae217f1-b695-4661-bd3d-6440eebc2c5c?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 4" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/67017079-51e1-4245-9bf1-b5957eb66c74?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 5" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/515313ac-7ec9-4c6e-95db-80dac2f8b960?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 6" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c513fc32-3ab9-4cca-911e-0b2642ac7206?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 7" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5731a5a7-689f-49ae-abf1-6e6dc00c2043?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 8" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb51d286-530f-42be-9e91-9c850522f127?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 9" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/44ba8437-f6fd-4a51-bfd3-262d7528f7a4?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 10" />
-  </div>
-  <div class="flex space-x-16 animate-loop-scroll" aria-hidden="true">
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/8ee9f161-df19-4fa7-a2a6-edf9acf0e0d6?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 1" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/80480f8a-69ad-4c30-88ba-f4e7ee08fc51?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 2" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/140d376c-13f2-4823-b397-b3de733bf560?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 3" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0ae217f1-b695-4661-bd3d-6440eebc2c5c?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 4" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/67017079-51e1-4245-9bf1-b5957eb66c74?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 5" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/515313ac-7ec9-4c6e-95db-80dac2f8b960?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 6" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c513fc32-3ab9-4cca-911e-0b2642ac7206?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 7" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5731a5a7-689f-49ae-abf1-6e6dc00c2043?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 8" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb51d286-530f-42be-9e91-9c850522f127?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 9" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/44ba8437-f6fd-4a51-bfd3-262d7528f7a4?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&" class="max-w-none" alt="Image 10" />
-  </div>
-</div>
-
-        
-      </main>
+    </main>
           
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <a

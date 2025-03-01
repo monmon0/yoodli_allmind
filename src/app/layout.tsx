@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Yoodli AI | AI roleplays",
-  description: "For Allmind AI Takehome",
+  description: "For Allmind AI ",
 };
 
 export default function RootLayout({
@@ -32,3 +32,10 @@ export default function RootLayout({
     </html>
   );
 }
+
+{/*
+  Heads up! 👋
+
+  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
+*/}
+
