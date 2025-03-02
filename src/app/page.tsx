@@ -20,7 +20,6 @@ import VideoDemo from "../components/video-demo";
 // make function to convert from unix to actual time
 
 export default function Home() {
-
 	const pressLogos = [
 	{ title: "Inc.", bgColor: "bg-blue-500", textColor: "text-white" },
 	{ title: "GeekWire", bgColor: "bg-indigo-600", textColor: "text-white" },
