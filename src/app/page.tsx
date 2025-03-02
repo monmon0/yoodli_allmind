@@ -4,7 +4,12 @@ import { useEffect, useRef, useState } from "react";
 
 const APISTORIES = "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty"
 
-import FancyTestimonialsSlider from "./Testimonial";
+import FancyTestimonialsSlider from "./testimonial";
+import CaseStudies from "./Casestudy"
+import ModalVideo from "./modal-video";
+import Tabs from "./Tabs"
+import ParallaxScenario from "./products"
+import FeaturesSection from "./features"
 
 // make function to convert from unix to actual time
 
@@ -17,6 +22,23 @@ export default function Home() {
                 "https://static.vecteezy.com/system/resources/previews/028/667/072/non_2x/google-logo-icon-symbol-free-png.png",
                ]
 
+  const pressLogos = [
+  { title: "Inc.", bgColor: "bg-blue-500", textColor: "text-white" },
+  { title: "GeekWire", bgColor: "bg-indigo-600", textColor: "text-white" },
+  { title: "WSJ", bgColor: "bg-blue-500", textColor: "text-white" },
+];
+
+  const logos2 = [
+  { name: "Forbes", src: "/logos/forbes-white.png", alt: "Forbes Logo" },
+  { name: "Inc.", src: "/logos/inc-white.png", alt: "Inc Logo" },
+  { name: "Google Cloud", src: "/logos/google-cloud-white.png", alt: "Google Cloud Logo" },
+  { name: "WSJ", src: "/logos/wsj-white.png", alt: "WSJ Logo" },
+  { name: "Microsoft", src: "/logos/microsoft-white.png", alt: "Microsoft Logo" },
+  { name: "KOMO 4", src: "/logos/komo4-white.png", alt: "KOMO 4 Logo" },
+  { name: "GeekWire", src: "/logos/geekwire-white.png", alt: "GeekWire Logo" },
+  { name: "Axios", src: "/logos/axios-white.png", alt: "Axios Logo" }
+];
+
   useEffect(() => {
 
   }, [])
@@ -24,7 +46,7 @@ export default function Home() {
 
   return (
     <div className="items-center min-h-screen  gap-16 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2  pb-20">
+      <main className="flex flex-col gap-8 row-start-2 justify-center pb-20">
         
         
   <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 backdrop-blur-2xl">
@@ -34,9 +56,9 @@ export default function Home() {
     </a>
   
     <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse gap-5">
-        <button type="button" className="text-slate-900">Sign In</button>
-        <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Get Yoodli</button>
-        <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+        <button type="button" className="text-slate-900 hidden sm:block">Sign In</button>
+        <button type="button" className=" hidden sm:block text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Get Yoodli</button>
+        <button className="hidden sm:block relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
           <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
          Talk to Sales
           </span>
@@ -81,9 +103,8 @@ export default function Home() {
   </nav>
 
   {/* Hero section  */}
-  <section className="relative bg-gradient-to-r from-blue-100 to-white py-60 text-center item-center">
-    <div className="flex flex-row gap-20 items-center justify-center px-40">
-    <div className="max-w-5xl mx-auto text-center justify-center">
+  <section className="relative bg-gradient-to-r from-blue-100 to-white py-60 text-center items-center">
+  <div className="max-w-5xl mx-auto text-center items-center">
         <h1 className="text-4xl font-bold text-gray-900">
           AI Roleplays for 
 
@@ -99,19 +120,25 @@ export default function Home() {
         </span>
 
         </h1>
-        
-        <p className="mt-4 text-lg text-gray-600">
-          Improve your communication skills with private, real-time, and
-          judgment-free roflex space-x-16 animate-loop-scroll gap-4leplay coaching — powered by AI. Like Grammarly, but
-          for speech!
-        </p>
-      </div>
 
-      <div className="" key = "">
+        {/* flex space-x-16 animate-loop-scroll gap-4 */}
+        <p> Improve your communication skills with private, real-time, and
+              judgment-free roleplay coaching — powered by AI. </p>
+              
+             <p> Like Grammarly, but
+              for speech!</p>
+        
+      </div>
+    {/* <div className="flex flex-row gap-20 items-center justify-center px-40">
+    
+        <div className="mt-4 text-lg text-gray-600">
+             
+        </div> */}
+        {/* <div className="" key = "">
         <video width="40%" height="auto"
           autoPlay src="https://yoodli.ai/assets/videos/hero-video.webm" playsInline loop></video>
-        </div>
-    </div>
+        </div> */}
+    {/* </div> */}
 
     <div className="mt-16 flex justify-center gap-4">
           <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md">
@@ -143,7 +170,7 @@ export default function Home() {
   
 
     {/* company logo infinite scroll */}
-      <div className="flex flex-col items-center mx-10  mt-5 mb-20 gap-5">
+      <div className="flex flex-col items-center mx-10  my-20 gap-5">
         <h1 className="text-lg font-medium text-gray-900 dark:text-white ">Trusted by the world's best companies...</h1>
 
         <div className="flex overflow-hidden space-x-4">
@@ -165,6 +192,57 @@ export default function Home() {
         <h1  className="text-lg font-medium text-gray-900 dark:text-white "> and their employees</h1>
           <FancyTestimonialsSlider />
       </div>
+
+      <CaseStudies/>
+
+
+    <section className="py-12  text-white">
+      <div className="container mx-auto text-center">
+        <h2 className="text-xl font-semibold mb-8 text-gray-900" >Featured in</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center">
+          {logos2.map((logo,index) => (
+            <div key={logo.name} className="flex justify-center">
+              <img src={logo.src} alt={logo.alt} width={150} height={50} className="filter invert" key={index} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div className="relative w-full max-w-2xl mx-auto justify-center item-center">
+    <h1 className="text-lg font-medium text-gray-900 dark:text-white justify-center item-center text-center">Check out a demo in action 👍</h1>
+
+      <div className="overflow-hidden rounded-2xl transition-transform duration-300 ease-in hover:scale-105 shadow-lg mt-5">
+        <iframe
+          className="w-full h-64 md:h-96"
+          src="https://www.youtube.com/watch?v=4O1vnWR9dzM&ab_channel=YoodliAIspeechcoach"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+    </div>
+
+    
+    <div className="flex justify-center items-center gap-6 p-6">
+      {pressLogos.map((press, index) => (
+        <div
+          key={index}
+          className={`w-40 h-20 flex justify-center items-center ${press.bgColor} ${press.textColor} rounded-2xl shadow-2xl font-bold text-xl transition-transform duration-300 hover:scale-105`}
+        >
+          {press.title}
+        </div>
+      ))}
+    </div>
+
+    < Tabs />
+    
+    {/* figure out the parallax part */}
+
+   < FeaturesSection />
+
+
+
 
     </main>
           
