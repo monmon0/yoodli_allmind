@@ -16,8 +16,8 @@ export default function LogoCarousel() {
 
   useEffect(() => {
     const scroll = scrollRef.current;
-    let start = Date.now();
-    let speed = 50; // Adjust speed of the scroll
+    const start = Date.now();
+    const speed = 50; // Adjust speed of the scroll
 
     function step() {
       const elapsed = Date.now() - start;

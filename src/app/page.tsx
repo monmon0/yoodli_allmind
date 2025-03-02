@@ -1,15 +1,15 @@
 'use client'
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 
 const APISTORIES = "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty"
 
 import FancyTestimonialsSlider from "../components/testimonial";
 import CaseStudies from "../components/Casestudy"
-import ModalVideo from "../components/modal-video";
+
 import Tabs from "./tabs"
-import ParallaxScenario from "../components/products"
+
 import FeaturesSection from "../components/features"
 import Footer from "../components/footer"
 import VideoSection from "../components/video"
@@ -20,13 +20,6 @@ import VideoDemo from "../components/video-demo";
 // make function to convert from unix to actual time
 
 export default function Home() {
-
-	const logos = ["https://static.vecteezy.com/system/resources/previews/028/667/072/non_2x/google-logo-icon-symbol-free-png.png",
-								"https://static.vecteezy.com/system/resources/previews/028/667/072/non_2x/google-logo-icon-symbol-free-png.png",
-								"https://static.vecteezy.com/system/resources/previews/028/667/072/non_2x/google-logo-icon-symbol-free-png.png",
-								"https://static.vecteezy.com/system/resources/previews/028/667/072/non_2x/google-logo-icon-symbol-free-png.png",
-								"https://static.vecteezy.com/system/resources/previews/028/667/072/non_2x/google-logo-icon-symbol-free-png.png",
-							 ]
 
 	const pressLogos = [
 	{ title: "Inc.", bgColor: "bg-blue-500", textColor: "text-white" },

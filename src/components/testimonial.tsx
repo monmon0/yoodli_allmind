@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { StaticImageData } from 'next/image'
 import { Transition } from '@headlessui/react'
 
 
