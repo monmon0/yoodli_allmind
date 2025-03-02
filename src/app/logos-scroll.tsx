@@ -15,17 +15,19 @@ export default function LogoCarousel() {
   const scrollRef = useRef(null);
 
   useEffect(() => {
-    const scroll = scrollRef.current;
-    const start = Date.now();
-    const speed = 50; // Adjust speed of the scroll
+    // const scroll = scrollRef.current;
+    // const start = Date.now();
+    // const speed = 50; // Adjust speed of the scroll
 
-    function step() {
-      const elapsed = Date.now() - start;
-      scroll.scrollLeft = (elapsed / speed) % scroll.scrollWidth;
-      requestAnimationFrame(step);
-    }
+    // function step() {
+    //   if (!scroll) return;
+    //   const elapsed = Date.now() - start;
+    //   scroll.scrollLeft = (elapsed / speed) % scroll?.scrollWidth;
+    //   requestAnimationFrame(step);
+    // }
+    
 
-    step();
+    // step();
   }, []);
 
   return (

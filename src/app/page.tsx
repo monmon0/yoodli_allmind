@@ -3,8 +3,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 
-const APISTORIES = "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty"
-
 import FancyTestimonialsSlider from "../components/testimonial";
 import CaseStudies from "../components/Casestudy"
 
