@@ -30,8 +30,8 @@ export default function FeaturesSection() {
         </div>
 
         <div className="flex flex-col items-center gap-4">
-          <Image 
-            src="/aicpa-soc.png" 
+          <img 
+            src="https://accorian.com/wp-content/uploads/2022/08/aicpa-soc-logo-freelogovectors.net_-PNG.png" 
             alt="AICPA SOC Certification" 
             width={100} 
             height={100} 

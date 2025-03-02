@@ -21,24 +21,25 @@ export default function FancyTestimonialsSlider() {
 
   const testimonials: Testimonial[] = [
     {
-      img: "https://yoodli.ai/assets/testimonials/ashraf_mathkour.webp",
-      quote: "The ability to capture responses is a game-changer. If a user gets tired of the sign up and leaves, that data is still persisted. Additionally, it's great to select between formats.",
-      name: 'Jessie J',
-      role: 'Acme LTD'
+        img: "https://yoodli.ai/assets/testimonials/ashraf_mathkour.webp",
+        quote: "I'm finally confident when I present to executives – Yoodli is my team’s secret superpower. It is the smart mirror that we use for onboarding, sales pitches, and negotiations.",
+        name: "Ashraf Mathkour",
+        role: "Head of Mid Market Sales, Uber"
     },
     {
-      img: "https://yoodli.ai/assets/testimonials/ashraf_mathkour.webp",
-      quote: "Having the power to capture user feedback is revolutionary. Even if a participant abandons the sign-up process midway, their valuable input remains intact.",
-      name: 'Nick V',
-      role: 'Malika Inc.'
+        img: "https://yoodli.ai/assets/testimonials/craig_valentine.webp",
+        quote: "Yoodli enables pitch coaching at scale. It’s customizable and took just minutes to set up. I use it with every student, trainer, and World Championship contestant I train.",
+        name: "Craig Valentine",
+        role: "World Champion of Public Speaking"
     },
     {
-      img: "https://yoodli.ai/assets/testimonials/ashraf_mathkour.webp",
-      quote: "The functionality to capture responses is a true game-changer. Even if a user becomes fatigued during sign-up and abandons the process, their information remains stored.",
-      name: 'Amelia W',
-      role: 'Panda AI'
+        img: "https://yoodli.ai/assets/testimonials/kristin_parker.webp",
+        quote: "I work with Fortune 50 execs – Yoodli is my speech coaching assistant. It reinforces my feedback with quantifiable data. Think of Yoodli as the thermometer if I’m the doctor.",
+        name: "Kirstin Parker",
+        role: "Executive Communications Director, Accenture"
     }
-  ]
+];
+
 
 
   useEffect(() => {
@@ -117,7 +118,7 @@ export default function FancyTestimonialsSlider() {
             className={`inline-flex justify-center whitespace-nowrap rounded-full px-3 py-1.5 m-1.5 text-xs shadow-sm focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ${active === index ? 'bg-indigo-500 text-white shadow-indigo-950/10' : 'bg-white hover:bg-indigo-100 text-slate-900'}`}
             onClick={() => { setActive(index); setAutorotate(false); }}
           >
-            <span>{testimonial.name}</span> <span className={`${active === index ? 'text-indigo-200' : 'text-slate-300'}`}>-</span> <span>{testimonial.role}</span>
+            <span>{testimonial.name}</span> <span className={`${active === index ? 'text-indigo-200' : 'text-slate-300'}`}>-</span> 
           </button>
         ))}
 
